@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>obj fit and cover</title>
+    <style>
+        .container{
+            height: 300px;
+            width: 500px;
+            border: 2px solid black;
+        }
+        .container > img{
+            height: 500px;
+            width: 500px;
+            border: 2px solid black;
+            object-fit: cover;
+            object-position: center center ;
+            /* object-position: 50% 50% ; */
+            /* object-position: top left; */
+            /* object-fit: contain; */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="wallpaper-mountains.png" alt="img">
+    </div>
+</body>
+</html>

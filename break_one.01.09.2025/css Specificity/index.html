@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vid-21</title>
+    <style>
+        /* Position and order of appearance: the order in which your CSS rules appear. Last one is obyed if selector type is same.  */
+        .a1{background-color: black;}
+        .a2{background-color: blue;}
+        .a3{background-color: red;}
+
+        /* Specificity: an algorithm that determines which CSS selector has the strongest match */
+        /* Inline Style > ID Selector > Class or Attribute Selector > Element Selector > Universal Selector */
+                /* Specificity Calculation
+        Universal Selector: 0
+        Element selectors and pseudo-elements: 1
+        Class selectors, attribute selectors, and pseudo-classes: 10
+        ID selectors: 100
+        Inline styles: 1000 */
+       
+        h2{color: green;}
+        .c1{color: rgb(192, 29, 187);}
+        [data-1=a]{ 
+            color: blue;
+        }
+
+        /* Important */
+        .b1{color:rgb(205, 239, 14) !important;}
+        .b2{color: magenta;}
+
+    </style>
+</head>
+<body>
+    <h1>css Specificity</h1>
+    <h1 class="a1 a2 a3 " >1.Position and order of appearance </h1>
+    <h2 data-1="a" class="c1">2.Specificity</h2>
+    <h3 class="b2 b1">3.Impprtant</h3>
+
+</body>
+</html>

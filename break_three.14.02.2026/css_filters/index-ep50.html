@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .img1{
+            /* filter: blur(20px); */
+            /* filter: brightness(150%); */
+            /* filter: grayscale(100%); */
+            filter: invert(0.63);
+        }
+
+        .img2{
+            /* filter: sepia(90%); */
+            filter: contrast(300%) saturate(20%);
+        }
+
+        .img3{
+            filter: opacity(30%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img height="256" src="glitch-blade.jpg" alt="" class="img1">
+        <img height="256" src="wallpaper-mountains.png" alt="" class="img2">
+        <img height="256" src="image.png" alt="" class="img3">
+    </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>episode 45</title>
+    <style>
+        .container{
+            width: 80vw;
+            height: 80vh;
+            background-color: lightblue;
+        }
+        .box{
+            width: 10vw;
+            height: 10vh;
+            background-color: rgb(228, 112, 228);
+            border: 2px solid black;
+        }
+
+        .translate{
+            transform: translateX(10vw) translateY(10vh) scaleX(50%);
+            /* background-color: greenyellow; */
+        }
+
+        .transition{
+            /* transition-property: all; */
+            /* transition-property: transform; */
+
+            /* transition-property: transform;
+            transition-duration: 3s;
+            transition-timing-function:ease-in-out;
+            transition-delay: 0ms; */
+            transition: transform 3s ease-in-out 10ms;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box translate transition"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nav bar with Flex</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    :root {
+      --theamcolor1: black;
+      --theamcolor2: rgb(70, 59, 195);
+    }
+    body {
+      background-color: var(--theamcolor1);
+      font-family: Arial, sans-serif;
+    }
+
+    nav {
+      background-color: var(--theamcolor2);
+      padding: 10px 20px;
+      display: flex;                /* enable flex */
+      justify-content: space-between; /* logo left, links right */
+      align-items: center;          /* vertical center */
+    }
+
+    /* Logo and name */
+    #logo {
+      display: flex;
+      align-items: center; /* align image + text vertically */
+    }
+    #logo img {
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 8px;
+    }
+    #name {
+      color: white;
+      font-size: 20px;
+    }
+
+    /* Navigation links */
+    .navigator ul {
+      list-style: none;
+      display: flex; /* arrange li horizontally */
+      gap: 10px;     /* spacing between items */
+    }
+    .navigator a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+    }
+    .navigator a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div id="logo">
+      <img src="https://i.postimg.cc/SsgLd3yM/Whats-App-Image-2025-08-05-at-10-52-59-6ae10948-Copy.jpg" alt="">
+      <h1 id="name">GlitchBlade</h1>
+    </div>
+    <div class="navigator">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+</body>
+</html>

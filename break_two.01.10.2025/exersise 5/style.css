@@ -1,0 +1,63 @@
+:root{
+    --theamcolor1: blue;
+    --theamcolor2: black;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+nav img{
+    height: 40px;
+    border-radius: 50%;
+    margin: 5px;
+}
+nav h1{
+    color: white;
+    margin: 5px;
+    font-family: 'Segoe UI', Tahoma, 'Geneva', Verdana, sans-serif;
+}
+nav ul {
+    display: flex;
+    list-style: none;   /* remove bullets */
+    margin-left: auto;  /* pushes ul to the right */
+    margin-right: 10px; /* optional spacing from edge */
+}
+
+nav ul li a{
+    color: white;
+    text-decoration: none;
+}
+nav{
+    display: flex;
+    background-color: var(--theamcolor1);
+    align-items: center; 
+}
+
+.boxes{
+    display: flex;
+    background-color: aqua;
+    
+}
+.box:first-child{
+    background-color: red;
+}
+.box:nth-child(2){
+    background-color: aliceblue;
+}
+.box{
+    height: 300px;
+    width: 300px;
+    border: 2px solid black;
+    border-radius: 10%;
+    margin: 10px;
+}
+
+#about{
+    margin: 10px;
+    border: 2px solid;
+    border-radius: 10px;
+}
+footer ul{
+    margin: 20px;
+}

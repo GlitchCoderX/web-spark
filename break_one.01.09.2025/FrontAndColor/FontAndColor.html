@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vid-19</title>
+    <style>
+        /* this is a font link */
+        @import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&family=Galada&display=swap');
+
+
+
+        * {
+            padding: 0px;
+            margin: 5px;
+        }
+
+        .galada-regular {
+            /* this is a font relatead section */
+            font-family: "Galada", "cursive"; /* It defines a font stack */
+            font-weight: 400; /* It is for bolding a text */
+            font-style: normal; /* It is for making a text normal, italic etc. type */
+            font-size: 50px; /* It is for changing the size of a text */
+        }
+
+        .omg {
+            /* this is a font relatead section too */
+            font-family: "Edu NSW ACT Cursive, cursive"; /* It defines a font stack */
+            font-optical-sizing: auto;
+            font-weight: 500; /* It is for bolding a text */
+            font-style: normal; /* It is for making a text normal, italic etc. type */
+            font-size: 30px; /* It is for changing the size of a text */
+            background-color: blue;
+            /* this is box related */
+            padding: 12px; /* it is for giving space inside the box */  
+            border: 5px solid red; /* it is for giving border to the box */
+            border-radius: 15px; /* it is for making the border round */
+            margin: 20px; /* it is for giving space outside the box */
+            width: 300px; /* it is for giving width to the box */
+            box-sizing: border-box; /* it is for including padding and border in the width */
+            /* height: 100px; */ /* it is for giving height to the box */
+            height: 200px;
+            font-style: italic; /* It is for making a text normal, italic etc. type */
+            color: white; /* it is for changing the color of the text */
+        }
+
+        #world {
+            /* this is a decoration section; */
+            font-weight: bold; /* It is for bolding a text */
+            font-style: normal; /* It is for making a text normal, italic etc. type */
+            font-size: 60px; /* It is for changing the size of a text */
+            text-decoration: underline; /* It is for underlining a text */
+            text-decoration-line: underline overline; /* It is for underlining a text */
+            text-decoration-color: blueviolet;
+            text-decoration-style: double;
+            text-decoration-thickness: 5px;
+            /* text-indent: 100px; */
+            text-align: center;
+
+        }
+
+        div>p {
+            /* this is line and speacing related */
+            line-height: 2; /* it is for giving space between lines */
+            text-align: justify; /* it is for aligning the text */
+            letter-spacing: 2px; /* it is for giving space between letters */
+        }
+
+        h2 {
+            /* this is text transform related */
+            /* text-transform: capitalize; */
+            /* text-transform: lowercase; */
+            text-transform: uppercase;
+            font-family: fantasy;
+            font-weight: 250;
+
+        }
+
+        #var {
+            font-size: larger;
+            border: 2px solid blue;
+            width: 150px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+
+        }
+
+        /* colors type */
+        #way1 {
+            color: yellow;
+            background-color:red;
+        }
+
+        #way2 {
+            color: #19D4D4;
+             background-color: #62d529;
+        }
+
+        #way3 {
+            color: rgb(104, 181, 69);
+             background-color: rgb(111, 22, 179);
+        }
+
+        #way4 {
+            color: rgba(221, 23, 155, 0.253);
+             background-color:rgba(26, 26, 194, 0.458);
+        }
+
+        #way5 {
+            color: hsl(5, 28%, 56%);
+             background-color: hsla(217, 83%, 73%, 0.418);
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="galada-regular" id="world">Hello world</h1>
+    <h2> I am a text</h2>
+    <p class="omg">
+        i am a text with style
+    </p>
+
+    <p id="var">Lorem ipsum dolorooooooooooooooooooo, sit amet consectetur adipisicing elit. Qui voluptas quia, dolor
+        cum voluptates, aut
+        dolores repellendus, placeat vel enim quae?</p>
+
+    <div>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis eligendi quasi doloribus iste voluptatum
+            provident commodi sequi eveniet magni, ut porro! Impedit esse officiis eveniet, nobis consectetur</p>
+    </div>
+
+    <ol>
+        <li id="way1">Color keywords</li>
+        <li id="way2">Hex color code</li>
+        <li id="way3">RGB</li>
+        <li id="way4">RGBA</li>
+        <li id="way5">HSL</li>
+    </ol>
+</body>
+
+</html>

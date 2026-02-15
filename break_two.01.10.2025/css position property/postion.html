@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vid-28</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .parent{
+            height: 5000px;
+            width: 80vw;
+            padding: 10px;
+            margin: 10px;
+            border: 2px solid;
+            position: relative;
+             /* transform,filter perpestive also consider as position */
+        }
+
+        .box{
+            
+            height: 100px;
+            width: 70vw;
+            border: 2px solid black;
+            border-radius: 5px;
+            padding: 5px;
+            margin: 10px; 
+        }
+
+        .box1{
+            background-color: aqua;
+            position: sticky;
+            top: 0px;
+        }
+        .box2{
+            background-color: blue;
+            position: relative; /*it used to let you use position stuffs but statick won't*/
+            z-index: -2;
+            top: 20px;
+            left: 20px;
+        }
+        .box3{
+            background-color: blueviolet;
+            position: absolute; /*it becomes nearest  parent's position relative */
+            top: 50px;
+            left: 10px;
+
+        }
+        .box4{
+            background-color: darkblue;
+            position: fixed; /*fixed with the display like  a paper sticked on display 😁*/
+            left: 90px;
+            bottom: 10px;
+           
+
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="box box1">deafult static</div>
+        <div class="box box2">position: relative; /*it used to let you use position stuffs but statick won't*/</div>
+        <div class="box box3">position: absolute; /*it becomes nearest position parent */</div>
+        <div class="box box4"> i am a ghost</div>
+    </div>
+    
+</body>
+</html>

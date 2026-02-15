@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial 38- css flesbox</title>
+    <style>
+        :root{
+            --color1: white;
+            --color2: black;
+
+        }
+        body{
+            background-color: var(--color1);
+        }
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        .container{
+            margin: 10px;
+            width: 90vw;
+            height: 80vh;
+            border: 2px solid  black;
+            display: flex;
+            justify-content:flex-start;
+            align-content: flex-start;
+            /* align-items: flex-start; */
+            /* flex-direction: column; */
+            /* flex-wrap: wrap; */
+            gap: 30px 10px;
+        }
+        .item{
+            height: 64px;
+            width: 64px;
+            /* margin: 4px; */
+            background-color: violet;
+            border: 1px solid black;
+            flex-grow:1;
+        }
+        .order-1{
+            order: 1;
+        }
+        .order-2{
+            order: 2;
+        }
+        .order-3{
+            order: 3;
+        }
+        /* deafult order is 0 */
+        .item-1{
+            /* flex-grow: 3; */
+            flex-shrink: 3;
+        }
+        .item-2{
+            align-self: flex-end;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item item-1">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item order-1">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item order-2">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+        <div class="item">10</div>
+        <div class="item">11</div>
+        <div class="item">12</div>
+        <div class="item item-2">13</div>
+        <div class="item">14</div>
+        <div class="item">15</div>
+       
+    
+</body>
+</html>

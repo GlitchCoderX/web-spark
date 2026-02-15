@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vid-23/title> </title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .box {
+            border: 2px solid blue;
+            border-radius: 10px;
+            display: inline-block;
+            padding: 25px;
+            margin: 25px;
+            width: 200px;
+            display: inline-flex;
+            /* width: 10px;  can't be used with display: inline;. you have to use inline-block */
+        }
+
+        .container{
+            border: 2px solid rgb(23, 183, 39);
+            display: inline;
+            /* display: none; make it dissapare but not take the place */
+            padding: 25px;
+            margin: 25px;
+            /* visibility: hidden; hide the stuff but the plaec is visible */
+
+        }
+        .gap{
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        i am a div
+    </div>
+    <div class="box">
+        but inline
+    </div>
+    <div class="gap"></div>
+    <div class = "container">
+        i am inline 
+    </div>
+    <div>
+        -block element
+    
+    </div>
+
+
+</body>
+
+</html>

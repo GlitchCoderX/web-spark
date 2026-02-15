@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ball animation</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+        }
+        .container{
+            width: 1000px;
+            height: 600px;
+            margin: auto;
+            background-color: skyblue;
+        }
+
+        .ball{
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            background-color: yellow;
+            animation: bounce 10s linear 3s;
+        }
+        @keyframes bounce{
+            0%{}
+            10%{ transform: translate(100px,500px);}
+            25%{ transform: translate(200px,200px);}
+            50%{ transform: translate(300px,500px);}
+            75%{ transform: translate(400px,300px);}
+            100%{ transform: translate(500px,500px);}
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="ball"></div>
+    </div>
+</body>
+</html>

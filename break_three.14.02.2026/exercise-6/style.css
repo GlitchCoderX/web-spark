@@ -1,0 +1,92 @@
+@media (max-width: 490px) {
+    #contant{
+        width: 100vw;
+    }
+    
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    color: white;
+}
+
+body{
+    background-color: black;
+}
+#contant{
+    max-width: 80vw;
+    margin: auto;
+}
+nav {
+    background-color: cornflowerblue;
+    display: flex;
+    justify-content: space-between;
+}
+
+#logoName{
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 10px;
+  margin-left: 10px;
+}
+.blue{
+    color: rgb(0, 0, 170);
+}
+.red{
+    color: rgb(160, 0, 0);
+}
+#logoName > img{
+    height: 30px;
+    border-radius: 50%;
+}
+#logoName div {
+    display: flex;
+}
+#navigator ul{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+#contant ul li{
+    list-style: none;
+}
+
+#navigator li > a{
+    color: black;
+    text-decoration: none;
+}
+#navigator{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+.gothic{
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
+/* claude */
+/* Add to your CSS */
+#navigator li > a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+#navigator li > a:focus {
+    outline: 2px solid white;
+}
+
+/* Better spacing */
+#navigator ul {
+    gap: 20px; /* increased from 10px */
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More CSS selectors</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body{
+            background-color: black;
+        }
+        .box:first-child{
+            background-color: aqua;
+        }
+        .box:nth-child(even){
+            background-color: greenyellow;
+        }
+        .box:nth-child(3)::first-line{
+            background-color: blueviolet;
+        }
+        .box:nth-last-child(1){
+            color: white;
+        }
+
+        [data-border="primary"]{
+            border: 2px solid black;
+            border-radius: 10px;
+            padding: 5px;
+        }
+        .boxes::after{
+            content: "i am learning Web dev.";
+            color: wheat;
+        }
+
+        ::selection{
+            background-color: gray;
+            color: aqua;
+        }
+        input::placeholder{
+            color: aquamarine;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="boxes">
+        <div class="box">no.1 box</div>
+        <div data-border="primary" class="box">no.2 box</div>
+        <div class="box">no.3 box. Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio officiis aspernatur temporibus consectetur, quasi eveniet iure rem sapiente tempora aliquam aperiam delectus debitis numquam distinctio ea. Aliquam a quas aut repudiandae sapiente consequatur veniam in ex quae eveniet, eum eius velit quia excepturi inventore est?</div>
+        <input type="text"placeholder="enter your name">
+    </div>
+    
+</body>
+</html>

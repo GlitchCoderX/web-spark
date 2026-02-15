@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS grid</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            margin: auto;
+            width: 80vw;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+
+        }
+
+        .box {
+            height: 150px;
+            padding: 15px;
+            border-radius: 30px;
+            display: flex;
+            flex-direction: column;
+            background-color: lightgray;
+        }
+
+        .box h3 {
+            font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+            font-size: x-large;
+        }
+
+        .box > a {
+            padding: 5px;
+            background-color: aliceblue;
+            border-radius: 10px;
+            color: black;
+            text-decoration: none;
+            text-decoration: none;
+            text-align: center;
+            margin-top: auto;
+        }
+        .box > a:hover {
+            background-color: #c8dff5;
+        }
+            /* --------------------------
+            media quaries
+            --------------------------- */
+        @media (min-width: 600px) {
+            .container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width: 900px) {
+            .container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <h3>1.working</h3>
+            <a target="_blank" href="glitch-blade.jpg">Download My Logo</a>
+        </div>
+
+        <div class="box">
+            <h3>2.working</h3>
+            <a target="_blank" href="glitch-blade.jpg">Download My Logo</a>
+        </div>
+
+        <div class="box">
+            <h3>3.working</h3>
+            <a target="_blank" href="glitch-blade.jpg">Download My Logo</a>
+        </div>
+
+        <div class="box">
+            <h3>4.working</h3>
+            <a target="_blank" href="glitch-blade.jpg">Download My Logo</a>
+        </div>
+
+        <div class="box">
+            <h3>5.working</h3>
+            <a target="_blank" href="glitch-blade.jpg">Download My Logo</a>
+        </div>
+    </div>
+</body>
+
+</html>

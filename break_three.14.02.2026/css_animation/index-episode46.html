@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> episode 46</title>
+    <style>
+        .container{
+            height: 70vh;
+            width: 70vw;
+            background-color: rgb(79, 79, 166);
+        }
+
+        .box{
+            height: 100px;
+            width: 100px;
+            background-color: rgb(221, 117, 117);
+            /* animation-name: Mayabi;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-timing-function: cubic-bezier(0.08, 0.57, 0.58, 1);
+            animation-delay: 2s;
+            animation-direction: alternate-reverse;
+            animation-play-state: running; */
+            animation: Mayabi 3s cubic-bezier(0.08, 0.57, 0.58, 1) 2s,
+                       demons 3s linear 2s;
+        }
+
+        @keyframes Mayabi{
+            from{
+                background-color: rgb(226, 43, 43);
+
+            }
+            to{
+                transform: translateX(30vw);
+                background-color: cornflowerblue;
+            }
+        }
+        @keyframes demons{
+            0%{
+                transform: rotate(50deg);
+            }
+            10%{
+                transform: rotate(90deg);
+            }
+            30%{
+                transform: rotate(150deg);
+            }
+            80%{
+                transform: rotate(200deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box"></div>
+    </div>
+</body>
+</html>

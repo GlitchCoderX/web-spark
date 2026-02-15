@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vid-31</title>
+    <style>
+        body {background-color: black;}
+
+        .box{
+            height: 100px;
+            width: 200px;
+            background-color: #43cbc9;
+            border: 2px solid #fff;
+
+        }
+        @media screen and (orientation: landscape) {
+            body {
+                border: 10px solid red;
+            }
+            
+        }
+
+        @media only screen and (min-width: 455px){
+            body{
+                background-color: #acacac;
+            }
+            .box{
+                height: 50px;
+                width: 100px;
+                background-color: #f177d7;
+                border: 2px solid #000;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

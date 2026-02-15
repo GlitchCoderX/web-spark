@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vid-17</title>
+
+    <style>
+        /*Element sellector */
+       span{background-color: black; color: white;}
+
+       /* ID sellector*/
+        #yoo{color:aquamarine ;}
+
+       /* Class sellector*/
+       .BGgray{background-color: gray;}
+       .TxtColor{color: white;}
+       
+       /*child sellector */
+       div > p{background-color: green;}
+
+       /*Descendant Sellector */
+       div h3{color:skyblue;}
+
+       /*Universal sellector */
+       *{
+        margin:5px;
+        padding:10px;
+         }
+
+         /*Pseudo sellector*/
+         a:link{color: red;}
+         a:visited{color: green;}
+         a:active{background-color: aqua;}
+         a:hover{background-color: red;}
+         h4:first-child{background-color: whitesmoke;}
+
+       
+    </style>
+</head>
+<body class="BGgray">
+
+   <div>
+    <h4>first-child</h4>
+    <h4>second-child</h4>
+   </div>
+
+    <p class="TxtColor"> The body and the paragraph are class sellectors  </p>
+    <div>
+        <span>this is an element sellector </span>
+    </div>
+    
+    <div>
+        <p>this is a child Sellector</p>
+    </div>
+    <div>
+        <article><h3>This is a Descendant sellector</h3></article>
+    </div>
+   <h2>The margine and padding are in Universal Sellector</h2>
+
+   <a href="https://www.youtube.com">link for Youtube</a>
+   <a target="_blank" href="https://www.x.com">link for x.com</a>
+    
+</body>
+</html>

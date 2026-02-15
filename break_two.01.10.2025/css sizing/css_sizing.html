@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vid-22</title>
+    <style>
+        * { 
+            margin: 0px;
+            padding: 0;
+            font-size: 16px ;
+        }
+
+        .container{
+            background-color: #76c510;
+            height: 10vmin;
+            width: 50vmax;
+            border: 5px solid black;
+            margin: auto;
+
+        }
+
+        .box {
+            box-sizing: border-box;
+            width: 80vw; /* vw means view-width. that measures in %. also vh means view-hight*/
+            min-height: 100px;
+            background-color: rgb(100, 171, 179);
+            font-size: 2rem; /*do the root size*/
+            margin: auto;
+        }
+
+        .omg {
+            width: 80vw;  /* vw and marging:auto works togather for reponsive design*/
+            background-color: blue;
+            margin: 20px auto; /*automaticly take the  magin. 20px is for heihgt and weidth*/
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        .omg p{
+            font-size: 2em; /* 2x the inherited/parents font size.*/
+            background-color: black;
+            color: white;
+            box-sizing: border-box;
+            width: 50%;
+        }
+
+        .box > span{
+            font-size: larger;
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <div class="omg">
+        <h1>i love coding</h1>
+        <p>That's a para. Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, sapiente! Ad voluptatibus neque dignissimos beatae? Mollitia cumque libero perspiciatis error, illum nemo, cum, architecto odit quas dicta ipsam. Beatae nobis earum accusamus ullam doloremque totam numquam adipisci fugit harum reprehenderit, fugiat itaque sequi consequatur maxime temporibus quibusdam ea iure? Voluptates odit voluptate natus, accusamus qui nisi.</p>
+    </div>
+</body>
+<div class="box">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos at reiciendis accusamus illo fugiat veritatis impedit, repellat deleniti consequatur. Mollitia, quisquam cum distinctio esse, quo, nostrum hic quis molestiae soluta error similique doloremque reprehenderit quidem quae. </p>
+   <span>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi provident illum rem iste harum cum distinctio nam architecto beatae minima id, vero mollitia tempore consequuntur reprehenderit, totam itaque eaque tenetur inventore eligendi, delectus veniam earum. Exercitationem, omnis numquam quia assumenda architecto porro expedita iste nesciunt alias quos odit vel eos beatae nam, repellendus, minima labore odio perspiciatis. Quod aperiam nemo sapiente, incidunt, ea dolorem tempore dolores ipsa sunt non magni exercitationem perspiciatis placeat dolorum reprehenderit. Labore dicta maxime illum, doloremque, in minima, facilis quaerat amet architecto error laboriosam culpa officia provident tenetur qui atque inventore exercitationem vero. Rerum iure accusantium animi ad debitis? Necessitatibus, ipsa. Ipsum incidunt dolorem voluptatibus blanditiis nam inventore eligendi fugiat provident, repellat distinctio? Alias modi fuga rem illum eaque. Officiis nisi repellendus officia, autem placeat sapiente. Quaerat maiores aliquid repudiandae, deserunt earum blanditiis a ex vero, voluptatem necessitatibus repellendus unde perspiciatis pariatur deleniti, aliquam veniam suscipit!
+   </span>
+</div>
+
+<div class="container">
+    i am a vmin or vmax
+</div>
+
+</html>

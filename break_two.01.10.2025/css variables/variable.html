@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vid-30</title>
+    <style>
+        :root{
+            --color1: black;
+            /* --color2: rgb(164, 164, 230); */
+            --color3: white;
+            --padding: 20px;
+        }
+
+        ul li{
+            list-style-type: none;
+           
+        }
+        ul{
+            display: flex;
+            justify-content: flex-end;
+            background-color: var(--color1);
+            color: var(--color3);
+
+        }
+
+        ul a{
+            color:var(--color3) ;
+        }
+
+        div p{
+            /* --color2: yellow; */
+            background-color: var(--color2, blue);
+            padding: var(--padding);
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <a href=""><li>Home &nbsp;</li></a>
+        <li>About &nbsp; </li>
+        <li>Contact &nbsp; </li>
+    </ul>
+
+    <div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, molestiae voluptatem, est totam sunt eius tempora soluta provident explicabo cum nobis consequatur vitae nesciunt similique quasi quibusdam. Recusandae maiores quas quos placeat asperiores, nostrum consequuntur voluptates, illum libero quo iste, iusto exercitationem doloremque.</p>
+    </div>
+    
+</body>
+</html>
