@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>HouseBot</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:system-ui,sans-serif;background:#0f172a;color:#e2e8f0;min-height:100vh;padding:20px}
+  h1{text-align:center;font-size:1.4rem;margin-bottom:20px;color:#7dd3fc;letter-spacing:2px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;max-width:800px;margin:0 auto 24px}
+  .card{background:#1e293b;border-radius:12px;padding:16px;border:1px solid #334155}
+  .card h3{font-size:.75rem;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+  .card .val{font-size:1.6rem;font-weight:600;color:#f1f5f9}
+  .card .unit{font-size:.85rem;color:#64748b;margin-left:4px}
+  .status{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px}
+  .on{background:#22c55e}.off{background:#475569}.alert{background:#ef4444;animation:pulse 1s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+  .section{max-width:800px;margin:0 auto 20px}
+  .section h2{font-size:.8rem;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
+  .controls{display:flex;flex-wrap:wrap;gap:10px}
+  .btn{padding:8px 16px;border-radius:8px;border:none;cursor:pointer;font-size:.85rem;font-weight:500;transition:all .2s}
+  .btn-on{background:#0ea5e9;color:#fff}.btn-on:hover{background:#38bdf8}
+  .btn-off{background:#334155;color:#94a3b8}.btn-off:hover{background:#475569}
+  .btn-danger{background:#dc2626;color:#fff}.btn-danger:hover{background:#ef4444}
+  .slider-row{display:flex;align-items:center;gap:12px;background:#1e293b;border-radius:10px;padding:12px 16px;border:1px solid #334155}
+  .slider-row label{font-size:.85rem;color:#94a3b8;min-width:80px}
+  input[type=range]{flex:1;accent-color:#0ea5e9}
+  .slider-row span{font-size:.85rem;color:#f1f5f9;min-width:36px;text-align:right}
+  .emergency-banner{display:none;background:#7f1d1d;border:1px solid #ef4444;border-radius:10px;padding:14px 18px;text-align:center;font-weight:600;color:#fca5a5;font-size:1rem;max-width:800px;margin:0 auto 16px;animation:pulse 1s infinite}
+  .log{max-width:800px;margin:0 auto;background:#1e293b;border-radius:10px;padding:12px;border:1px solid #334155;max-height:150px;overflow-y:auto}
+  .log p{font-size:.78rem;color:#64748b;margin-bottom:4px;font-family:monospace}
+  .vacation-row{display:flex;align-items:center;gap:12px;margin-top:10px}
+  .toggle{position:relative;width:44px;height:24px}
+  .toggle input{opacity:0;width:0;height:0}
+  .toggle .slider-t{position:absolute;inset:0;background:#334155;border-radius:12px;transition:.3s;cursor:pointer}
+  .toggle .slider-t:before{content:"";position:absolute;width:18px;height:18px;left:3px;top:3px;background:#fff;border-radius:50%;transition:.3s}
+  .toggle input:checked+.slider-t{background:#0ea5e9}
+  .toggle input:checked+.slider-t:before{transform:translateX(20px)}
+</style>
+</head>
+<body>
+<h1>🏠 HouseBot Dashboard</h1>
+
+<div class="emergency-banner" id="emergencyBanner">🚨 — —</div>
+
+<!-- Sensor cards -->
+<div class="grid">
+  <div class="card"><h3>Temperature</h3><span class="val" id="temp">--</span><span class="unit">°C</span></div>
+  <div class="card"><h3>Humidity</h3><span class="val" id="hum">--</span><span class="unit">%</span></div>
+  <div class="card"><h3>Water level</h3><span class="val" id="water">--</span><span class="unit">%</span></div>
+  <div class="card"><h3>Gas kitchen</h3><span class="val" id="gas1">--</span></div>
+  <div class="card"><h3>Gas room</h3><span class="val" id="gas2">--</span></div>
+  <div class="card"><h3>Flame</h3><span id="flameStatus" class="status off"></span><span id="flameText">Safe</span></div>
+  <div class="card"><h3>Motion</h3><span id="pirStatus" class="status off"></span><span id="pirText">Clear</span></div>
+</div>
+
+<!-- Lights -->
+<div class="section">
+  <h2>Lights</h2>
+  <div class="controls">
+    <button class="btn btn-on" onclick="send('light1','on')">Light 1 ON</button>
+    <button class="btn btn-off" onclick="send('light1','off')">Light 1 OFF</button>
+    <button class="btn btn-on" onclick="send('light2','on')">Light 2 ON</button>
+    <button class="btn btn-off" onclick="send('light2','off')">Light 2 OFF</button>
+    <button class="btn btn-on" onclick="send('light3','on')">Light 3 ON</button>
+    <button class="btn btn-off" onclick="send('light3','off')">Light 3 OFF</button>
+  </div>
+</div>
+
+<!-- Fan -->
+<div class="section">
+  <h2>Fan speed</h2>
+  <div class="slider-row">
+    <label>Speed</label>
+    <input type="range" min="0" max="255" value="0" id="fanSlider" oninput="fanChange(this.value)"/>
+    <span id="fanVal">0</span>
+  </div>
+</div>
+
+<!-- Water pump -->
+<div class="section">
+  <h2>Water pump</h2>
+  <div class="controls">
+    <button class="btn btn-on" onclick="send('pump','on')">Pump ON</button>
+    <button class="btn btn-off" onclick="send('pump','off')">Pump OFF</button>
+  </div>
+</div>
+
+<!-- Anti-theft -->
+<div class="section">
+  <h2>Security</h2>
+  <div class="vacation-row">
+    <label style="font-size:.85rem;color:#94a3b8">Vacation mode</label>
+    <label class="toggle"><input type="checkbox" id="vacToggle" onchange="send('vacation', this.checked?'on':'off')"/><span class="slider-t"></span></label>
+    <span id="vacLabel" style="font-size:.85rem;color:#64748b">Off</span>
+  </div>
+</div>
+
+<!-- Log -->
+<div class="section"><h2>Event log</h2></div>
+<div class="log" id="log"></div>
+
+<script>
+  let ws;
+  function connect(){
+    ws = new WebSocket('ws://' + location.hostname + ':81/');
+    ws.onmessage = e => {
+      const d = JSON.parse(e.data);
+      if(d.temp   !== undefined) document.getElementById('temp').textContent   = d.temp.toFixed(1);
+      if(d.hum    !== undefined) document.getElementById('hum').textContent    = d.hum.toFixed(1);
+      if(d.water  !== undefined) document.getElementById('water').textContent  = d.water;
+      if(d.gas1   !== undefined) document.getElementById('gas1').textContent   = d.gas1;
+      if(d.gas2   !== undefined) document.getElementById('gas2').textContent   = d.gas2;
+      if(d.flame  !== undefined){
+        document.getElementById('flameStatus').className = 'status ' + (d.flame?'alert':'off');
+        document.getElementById('flameText').textContent = d.flame?'FIRE!':'Safe';
+      }
+      if(d.pir    !== undefined){
+        document.getElementById('pirStatus').className = 'status ' + (d.pir?'on':'off');
+        document.getElementById('pirText').textContent = d.pir?'Motion':'Clear';
+      }
+      if(d.emergency !== undefined){
+        const b = document.getElementById('emergencyBanner');
+        if(d.emergency){b.style.display='block'; b.textContent='🚨 '+d.emergencyName+', take action!!!';}
+        else b.style.display='none';
+      }
+      if(d.log) addLog(d.log);
+      if(d.vacation !== undefined){
+        document.getElementById('vacToggle').checked = d.vacation;
+        document.getElementById('vacLabel').textContent = d.vacation?'On':'Off';
+      }
+    };
+    ws.onclose = () => setTimeout(connect, 2000);
+  }
+  connect();
+
+  function send(key, val){
+    if(ws && ws.readyState===1) ws.send(JSON.stringify({[key]:val}));
+    addLog('→ '+key+': '+val);
+  }
+  function fanChange(v){
+    document.getElementById('fanVal').textContent = v;
+    if(ws && ws.readyState===1) ws.send(JSON.stringify({fan: parseInt(v)}));
+  }
+  function addLog(msg){
+    const el = document.getElementById('log');
+    const p = document.createElement('p');
+    p.textContent = new Date().toLocaleTimeString()+' — '+msg;
+    el.prepend(p);
+    if(el.children.length>40) el.removeChild(el.lastChild);
+  }
+</script>
+</body>
+</html>
